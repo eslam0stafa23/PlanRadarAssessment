@@ -1,0 +1,57 @@
+plugins {
+  id 'com.android.application'
+  id 'kotlin-android'
+  id 'kotlin-kapt'
+  id 'kotlin-parcelize'
+  id 'androidx.navigation.safeargs.kotlin'
+}
+
+android {
+  compileSdk 31
+
+  defaultConfig {
+    applicationId "com.assessment.planradar"
+    minSdk 28
+    targetSdk 31
+    versionCode 1
+    versionName "1.0"
+
+    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    buildConfigField 'String', 'WEATHER_API_KEY', '"f5cb0b965ea1564c50c6f1b74534d823"'
+    buildConfigField 'String', 'MAIN_URL', '"https://api.openweathermap.org/"'
+    buildConfigField 'String', 'ICON_URL', '"https://openweathermap.org/img/wn/"'
+  }
+
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+    }
+  }
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+  kotlinOptions {
+    jvmTarget = '1.8'
+  }
+  buildFeatures {
+    viewBinding true
+  }
+}
+
+dependencies {
+  implementation androidCoreGroup
+  implementation navigation
+  implementation networking
+  implementation daggerLib
+  implementation room
+  implementation thirdParty
+
+  annotationProcessor annotationProcessorGroup
+  kapt kaptGroup
+
+  testImplementation testImplementationGroup
+  androidTestImplementation androidTestImplementationGroup
+}
