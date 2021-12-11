@@ -5,6 +5,12 @@ PlanRadar Android developer assessment
 this app utilize the open weather map API http://openweathermap.org/API to show current weather 
 for the added cities
 
+## How to run?
+
+This project needs Android Studio 4.0.0 or above with Android Gradle plugin 7.0.2+
+
+It's recommended to open it using <B>Android Studio Artic Fox</B>.
+
 ## Architecture
 Clean architecture based on MVVM (Model-View-ViewModel)
 The following diagram shows all the layers and how each layer interact with each other. This architecture using a layered software architecture.
